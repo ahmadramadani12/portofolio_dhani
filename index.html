@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - [Ahmad ramadani]</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Biru Tua
+                        accent: '#3b82f6',  // Biru Aksen
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-200 font-sans transition-colors duration-300">
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-primary dark:text-accent">
+                &lt;NamaAnda /&gt;
+            </a>
+
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#home" class="nav-link hover:text-accent transition">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-accent transition">About</a></li>
+                <li><a href="#skills" class="nav-link hover:text-accent transition">Skills</a></li>
+                <li><a href="#projects" class="nav-link hover:text-accent transition">Projects</a></li>
+                <li><a href="#experience" class="nav-link hover:text-accent transition">Experience</a></li>
+                <li><a href="#contact" class="nav-link hover:text-accent transition">Contact</a></li>
+            </ul>
+
+            <!-- Actions (Dark Mode & Mobile Menu) -->
+            <div class="flex items-center space-x-4">
+                <!-- Tombol Dark Mode -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 transition">
+                    <i class="fas fa-moon dark:hidden text-gray-700"></i>
+                    <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                </button>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <button id="hamburger" class="md:hidden text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 shadow-lg">
+            <ul class="flex flex-col p-4 space-y-3 font-medium">
+                <li><a href="#home" class="block py-2 hover:text-accent transition mobile-link">Home</a></li>
+                <li><a href="#about" class="block py-2 hover:text-accent transition mobile-link">About</a></li>
+                <li><a href="#skills" class="block py-2 hover:text-accent transition mobile-link">Skills</a></li>
+                <li><a href="#projects" class="block py-2 hover:text-accent transition mobile-link">Projects</a></li>
+                <li><a href="#experience" class="block py-2 hover:text-accent transition mobile-link">Experience</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-accent transition mobile-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= HERO / HOME ================= -->
+        <section id="home" class="min-h-screen flex items-center pt-20 pb-10 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+                <!-- Text Content -->
+                <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
+                    <p class="text-accent font-semibold mb-2 text-lg">Halo, Saya</p>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-primary dark:text-white leading-tight">
+                        [NAMA SAYA]
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-300">
+                        [PROFESI SAYA]
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg max-w-lg mx-auto md:mx-0">
+                        Saya adalah seorang developer yang bersemangat dalam membangun aplikasi web yang modern, responsif, dan memberikan pengalaman pengguna yang luar biasa.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-8 py-3 bg-primary dark:bg-accent text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+                            Lihat Portfolio
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border-2 border-primary dark:border-accent text-primary dark:text-accent font-semibold rounded-full hover:bg-primary dark:hover:bg-accent hover:text-white transition-all duration-300 text-center">
+                            Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+                <!-- Profile Image -->
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent shadow-2xl">
+                            <img src="https://placehold.co/400x400/1e3a8a/ffffff?text=Foto+Profil" alt="Foto Profil" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Dekorasi latar -->
+                        <div class="absolute -top-4 -left-4 w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-dashed border-accent animate-spin-slow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="py-20 bg-white dark:bg-slate-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-primary dark:text-white" data-aos="fade-up">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
+                            Saya adalah seorang [PROFESI SAYA] dengan pengalaman lebih dari [X] tahun dalam mengembangkan solusi digital. Saya memiliki passion yang kuat dalam teknologi web dan selalu berusaha untuk belajar hal-hal baru. Saya percaya bahwa kode yang baik bukan hanya tentang fungsionalitas, tetapi juga tentang keterbacaan dan efisiensi.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            Di waktu luang, saya suka berkontribusi pada proyek open-source, menulis artikel teknis, dan mengeksplorasi teknologi terbaru.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left">
+                        <!-- Info Cards -->
+                        <div class="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-user text-accent text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-500 dark:text-gray-400 text-sm">Nama</h4>
+                            <p class="font-bold">[NAMA SAYA]</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-map-marker-alt text-accent text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-500 dark:text-gray-400 text-sm">Lokasi</h4>
+                            <p class="font-bold">Jakarta, Indonesia</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-graduation-cap text-accent text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-500 dark:text-gray-400 text-sm">Pendidikan</h4>
+                            <p class="font-bold">S1 Teknik Informatika</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-slate-700 rounded-xl shadow-sm hover:shadow-md transition">
+                            <i class="fas fa-envelope text-accent text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-500 dark:text-gray-400 text-sm">Email</h4>
+                            <p class="font-bold text-sm break-all">email@domain.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="py-20 bg-gray-50 dark:bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-primary dark:text-white" data-aos="fade-up">Keahlian Saya</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Skill Item -->
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in">
+                        <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">HTML5</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-css3-alt text-5xl text-blue-500 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">CSS3</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fab fa-js text-5xl text-yellow-400 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">JavaScript</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-php text-5xl text-indigo-600 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">PHP</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-indigo-600 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in">
+                        <i class="fab fa-laravel text-5xl text-red-500 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Laravel</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-vuejs text-5xl text-green-500 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Vue.js</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-database text-5xl text-blue-700 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">MySQL</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-700 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-git-alt text-5xl text-orange-600 mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Git/GitHub</h3>
+                        <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                            <div class="bg-orange-600 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="py-20 bg-white dark:bg-slate-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-primary dark:text-white" data-aos="fade-up">Proyek Saya</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/1e3a8a/ffffff?text=E-Commerce" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">Toko Online App</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Aplikasi e-commerce lengkap dengan fitur keranjang, pembayaran, dan dashboard admin.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300 text-xs rounded-full">Laravel</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300 text-xs rounded-full">Vue.js</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 text-xs rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Task+Manager" alt="Project 2" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">Task Management</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Aplikasi manajemen tugas dengan fitur drag-and-drop, notifikasi, dan kolaborasi tim.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300 text-xs rounded-full">JavaScript</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 text-xs rounded-full">Tailwind</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/10b981/ffffff?text=Blog+Platform" alt="Project 3" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">CMS Blog Platform</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Platform blog dengan Content Management System, SEO friendly, dan editor rich-text.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-indigo-100 text-indigo-600 dark:bg-indigo-900 dark:text-indigo-300 text-xs rounded-full">PHP</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300 text-xs rounded-full">Laravel</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Weather+App" alt="Project 4" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">Weather Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Aplikasi cuaca real-time menggunakan API, menampilkan grafik dan prakiraan 7 hari.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300 text-xs rounded-full">JS</span>
+                                <span class="px-2 py-1 bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-300 text-xs rounded-full">API</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Portfolio+Web" alt="Project 5" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">Landing Page SaaS</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Landing page modern untuk produk SaaS dengan animasi scroll dan konversi tinggi.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 text-xs rounded-full">HTML</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300 text-xs rounded-full">Tailwind</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="overflow-hidden">
+                            <img src="https://placehold.co/600x400/ec4899/ffffff?text=Chat+App" alt="Project 6" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary dark:text-white">Realtime Chat App</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Aplikasi chat realtime dengan fitur room, typing indicator, dan notifikasi browser.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300 text-xs rounded-full">Vue.js</span>
+                                <span class="px-2 py-1 bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-200 text-xs rounded-full">Pusher</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center py-2 bg-primary dark:bg-accent text-white rounded-lg hover:opacity-90 transition text-sm font-semibold">Live Demo</a>
+                                <a href="#" class="flex-1 text-center py-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-600 transition text-sm font-semibold">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section id="experience" class="py-20 bg-gray-50 dark:bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-primary dark:text-white" data-aos="fade-up">Pengalaman & Pendidikan</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+
+                <div class="relative max-w-3xl mx-auto">
+                    <!-- Garis Timeline -->
+                    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-accent rounded-full"></div>
+
+                    <!-- Item 1 -->
+                    <div class="relative flex flex-col md:flex-row items-start mb-10" data-aos="fade-up">
+                        <div class="hidden md:block md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2022 - Sekarang</span>
+                            <h3 class="text-xl font-bold text-primary dark:text-white mt-2">Fullstack Developer</h3>
+                            <p class="text-accent font-semibold">PT Teknologi Maju Jaya</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white dark:border-slate-900 z-10"></div>
+                        <div class="md:w-1/2 md:pl-8 pl-12">
+                            <div class="md:hidden mb-2">
+                                <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2022 - Sekarang</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">Mengembangkan dan memelihara aplikasi web internal perusahaan menggunakan Laravel dan Vue.js. Meningkatkan performa database hingga 30%.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-start mb-10" data-aos="fade-up">
+                        <div class="hidden md:block md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2020 - 2022</span>
+                            <h3 class="text-xl font-bold text-primary dark:text-white mt-2">Frontend Developer</h3>
+                            <p class="text-accent font-semibold">Startup Digital Kreatif</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white dark:border-slate-900 z-10"></div>
+                        <div class="md:w-1/2 md:pr-8 md:text-right pl-12 md:pl-0">
+                            <div class="md:hidden mb-2">
+                                <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2020 - 2022</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">Bertanggung jawab atas implementasi UI/UX yang responsif dan interaktif. Berkolaborasi dengan tim desain untuk menerjemahkan mockup menjadi kode.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative flex flex-col md:flex-row items-start" data-aos="fade-up">
+                        <div class="hidden md:block md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2016 - 2020</span>
+                            <h3 class="text-xl font-bold text-primary dark:text-white mt-2">S1 Teknik Informatika</h3>
+                            <p class="text-accent font-semibold">Universitas Indonesia</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white dark:border-slate-900 z-10"></div>
+                        <div class="md:w-1/2 md:pl-8 pl-12">
+                            <div class="md:hidden mb-2">
+                                <span class="inline-block px-3 py-1 bg-accent text-white text-sm font-bold rounded-full">2016 - 2020</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300">Lulus dengan IPK 3.80. Aktif dalam komunitas coding kampus dan menjadi asisten laboratorium pemrograman dasar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-primary dark:text-white" data-aos="fade-up">Hubungi Saya</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+
+                <div class="flex flex-col lg:flex-row gap-12 max-w-5xl mx-auto">
+                    <!-- Info Kontak -->
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-4 text-primary dark:text-white">Mari Bekerja Sama!</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-8">
+                            Saya selalu terbuka untuk mendiskusikan proyek baru, ide kreatif, atau kesempatan untuk menjadi bagian dari visi Anda. Jangan ragu untuk menghubungi saya.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-accent">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                                    <p class="font-semibold">email@domain.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-green-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-green-600">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">WhatsApp</p>
+                                    <p class="font-semibold">+62 812 3456 7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-pink-100 dark:bg-slate-700 rounded-full flex items-center justify-center text-pink-600">
+                                    <i class="

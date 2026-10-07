@@ -1,0 +1,54 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+    background: #3b82f6; /* Accent color */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1e3a8a; /* Primary color */
+}
+
+/* Smooth Scroll untuk browser yang tidak support scroll-smooth di HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animasi custom untuk dekorasi hero */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+/* Efek transisi untuk navbar */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.dark .navbar-scrolled {
+    background-color: rgba(15, 23, 42, 0.95) !important; /* slate-900 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling untuk active link di navbar */
+.nav-link.active {
+    color: #3b82f6; /* accent */
+    font-weight: 600;
+}
+
+/* Pastikan gambar tidak overflow di card project */
+.group img {
+    max-width: 100%;
+    height: auto;
+}
